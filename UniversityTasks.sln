@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Day 1", "Day 1", "{841C581A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoNums", "Console Apps\Day 1\TwoNums\TwoNums.csproj", "{9B19E43B-9A5F-4880-AC0D-D6E5E922E8A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rectangle", "Console Apps\Day 1\Rectangle\Rectangle.csproj", "{231E9014-D3EC-4B6F-92BA-CC7A66976DD6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,9 +24,14 @@ Global
 		{9B19E43B-9A5F-4880-AC0D-D6E5E922E8A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B19E43B-9A5F-4880-AC0D-D6E5E922E8A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B19E43B-9A5F-4880-AC0D-D6E5E922E8A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{231E9014-D3EC-4B6F-92BA-CC7A66976DD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{231E9014-D3EC-4B6F-92BA-CC7A66976DD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{231E9014-D3EC-4B6F-92BA-CC7A66976DD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{231E9014-D3EC-4B6F-92BA-CC7A66976DD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{841C581A-E0C8-47E7-8A68-D761A8C59D67} = {BCDFBBD6-8266-4018-88B8-DBE134E80A5C}
 		{9B19E43B-9A5F-4880-AC0D-D6E5E922E8A6} = {841C581A-E0C8-47E7-8A68-D761A8C59D67}
+		{231E9014-D3EC-4B6F-92BA-CC7A66976DD6} = {841C581A-E0C8-47E7-8A68-D761A8C59D67}
 	EndGlobalSection
 EndGlobal
