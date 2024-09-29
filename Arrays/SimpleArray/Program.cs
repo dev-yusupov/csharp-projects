@@ -5,3 +5,4 @@ for (int index = 0; index < cars.Length; index++)
 {
     Console.WriteLine($"Car Name: {cars[index]}");
 }
+
