@@ -74,3 +74,45 @@ foreach (int number in evenNums)
 {
     Console.WriteLine(number);
 }
+
+int indexOfFiveDivisible = list.FindIndex(num => num % 5 == 0);
+
+Console.WriteLine($"Index: {indexOfFiveDivisible}");
+Console.WriteLine($"Element: {list[indexOfFiveDivisible]}");
+
+// Reverse Method
+Console.WriteLine("Numbers");
+foreach (int number in list)
+{
+    Console.WriteLine(number);
+}
+
+list.Reverse();
+
+Console.WriteLine("Reversed Numbers");
+foreach (int number in list)
+{
+    Console.WriteLine(number);
+}
+
+int[] decimals = new int[10];
+
+for (int i = 0; i < decimals.Length; i++)
+{
+    int decimalNumber = (i + 1) * 10;
+
+    decimals.SetValue(decimalNumber, i);
+}
+
+Console.WriteLine("Decimal Numbers");
+foreach (int number in decimals)
+{
+    Console.WriteLine(number );
+}
+
+list.Sort();
+
+foreach (int number in list)
+{
+    Console.WriteLine(number);
+}
