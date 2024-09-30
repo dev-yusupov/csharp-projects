@@ -250,7 +250,7 @@ class Program
             Console.WriteLine($"{product.ProductName}: {product.TotalRevenue}");
         }
     }
-    }
+}
 
 
 
