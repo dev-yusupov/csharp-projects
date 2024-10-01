@@ -1,10 +1,18 @@
-﻿namespace StudentAverageGrade
+﻿private class StudentAverage
+{
+    public string StudentName { get; set; }
+    public double Grade { get; set; }
+}
+
+namespace StudentAverageGrade
 {
     public class Student
     {
         public string Name { get; set; }
         public List<int> Grades { get; set; }
     }
+
+    
 
 
     class Program
