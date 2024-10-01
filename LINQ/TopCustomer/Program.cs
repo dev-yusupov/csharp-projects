@@ -23,6 +23,7 @@
     {
         public string Name { get; set; }
         public decimal Total { get; set; }
+        public int OrderCount { get; set; }
     }
 
     class Program
@@ -147,23 +148,28 @@
 
         static void Main(string[] args)
         {
+            DateTime sixMonthsAgo = DateTime.Now.AddMonths(-6);
             var topCustomers = customers
                 .Select(customer => new CustomerTotal { 
                     Name = customer.Name, 
-                    Total = customer.Orders.Sum(
-                        order => order.Products.Sum(
-                            product => product.Quantity * product.Price
-                            )
-                        ) 
-                    }
+                    Total = customer.Orders
+                        .Where(order => order.OrderDate >= sixMonthsAgo)
+                        .Sum(
+                            order => order.Products.Sum(
+                                product => product.Quantity * product.Price
+                                )
+                            ),
+                    OrderCount = customer.Orders.Count(order => order.OrderDate >= sixMonthsAgo)
+                        }
                 )
                 .OrderByDescending(customer => customer.Total)
                 .Take(3)
                 .ToList();
 
+            Console.WriteLine("Top 3 Customers in the Last 6 Months:");
             foreach (var customer in topCustomers)
             {
-                Console.WriteLine($"{customer.Name}: {customer.Total}");
+                Console.WriteLine($"{customer.Name}: Total Spend = {customer.Total:F2}, Orders Count = {customer.OrderCount}");
             }
         }
 
