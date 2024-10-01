@@ -1,8 +1,4 @@
-﻿private class StudentAverage
-{
-    public string StudentName { get; set; }
-    public double Grade { get; set; }
-}
+﻿using System.Globalization;
 
 namespace StudentAverageGrade
 {
@@ -12,7 +8,11 @@ namespace StudentAverageGrade
         public List<int> Grades { get; set; }
     }
 
-    
+    public class StudentAverage
+    {
+        public string StudentName { get; set; }
+        public double AverageGrade { get; set; }
+    }
 
 
     class Program
@@ -33,15 +33,21 @@ namespace StudentAverageGrade
 
         static void Main(string[] args)
         {
+            if (students == null || !students.Any())
+            {
+                Console.WriteLine("No students available!");
+                return;
+            }
+
             var averageGrades = students
-                .Select(student => new { StudentName = student.Name, average = student.Grades.Average() })
-                .OrderByDescending(student => student.average)
+                .Select(student => new StudentAverage { StudentName = student.Name, AverageGrade = student.Grades.Average()})
+                .OrderByDescending(student => student.AverageGrade)
                 .Take(5);
 
 
             foreach (var student in averageGrades)
             {
-                Console.WriteLine($"{student.StudentName}: {student.average}");
+                Console.WriteLine($"{student.StudentName}: {student.AverageGrade:F2}");
             }
                
         }
