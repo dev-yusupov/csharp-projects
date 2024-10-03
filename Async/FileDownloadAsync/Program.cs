@@ -48,7 +48,7 @@ namespace DownloadManager
 
                 return fileName;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new FileDownloadErrorException(fileName);
             }
