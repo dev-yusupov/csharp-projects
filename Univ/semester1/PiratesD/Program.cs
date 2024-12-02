@@ -39,13 +39,10 @@ namespace Pirates1
 
             for (int i = 0; i < n; i++)
             {
-                if (hunts[i].l >= t)
+                if (hunts[i].l >= t & hunts[i].p == "Jack" & jackIndex == -1)
                 {
 
-                    if (hunts[i].p == "Jack" & jackIndex == -1)
-                    {
-                        jackIndex = i;
-                    }
+                    jackIndex = i;
                 }
 
                 if (hunts[i].p == "Jack")
