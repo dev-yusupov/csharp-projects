@@ -2,27 +2,23 @@
 {
     internal class Program
     {
-        static int countDay(int[] dayData, int length)
+        static int countDay(int[,] data, int dayIndex, int m)
         {
             int sum = 0;
-
-            for (int i = 0; i < length / 2; i++)
+            for (int i = 0; i < m / 2; i++)
             {
-                sum += dayData[i];
+                sum += data[dayIndex, i];
             }
-
             return sum;
         }
 
-        static int countNight(int[] dayData, int length)
+        static int countNight(int[,] data, int dayIndex, int m)
         {
             int sum = 0;
-
-            for (int i = length / 2; i < length; i++)
+            for (int i = m / 2; i < m; i++)
             {
-                sum += dayData[i];
+                sum += data[dayIndex, i];
             }
-
             return sum;
         }
 
@@ -38,7 +34,6 @@
             for (int i = 0; i < n; i++)
             {
                 string[] line = Console.ReadLine()!.Split(' ');
-
                 for (int j = 0; j < m; j++)
                 {
                     data[i, j] = int.Parse(line[j]);
@@ -49,13 +44,7 @@
 
             for (int i = 0; i < n; i++)
             {
-                int[] row = new int[m];
-                for (int j = 0; j < m; j++)
-                {
-                    row[j] = data[i, j];
-                }
-
-                if (countDay(row, m) < countNight(row, m))
+                if (countDay(data, i, m) < countNight(data, i, m))
                 {
                     count++;
                 }
